@@ -27,14 +27,14 @@ void Render::Display( io2d::output_surface &surface )
     DrawRailways(surface);
     DrawHighways(surface);    
     DrawBuildings(surface);  
-    // DrawPath(surface);
-    // DrawStartPosition(surface);   
-    // DrawEndPosition(surface);
+    DrawPath(surface);
+    DrawStartPosition(surface);   
+    DrawEndPosition(surface);
 }
 
 void Render::DrawPath(io2d::output_surface &surface) const{
     io2d::render_props aliased{ io2d::antialias::none };
-    io2d::brush foreBrush{ io2d::rgba_color::orange}; 
+    io2d::brush foreBrush{ io2d::rgba_color::deep_sky_blue}; 
     float width = 5.0f;
     surface.stroke(foreBrush, PathLine(), std::nullopt, io2d::stroke_props{width});
 
