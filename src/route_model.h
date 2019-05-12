@@ -14,7 +14,7 @@ public:
 	{
 	public:
 		Node* parent = nullptr;
-		float h_value = 999999;
+		float h_value = std::numeric_limits<float>::max();
 		float g_value = 0.0;
 		bool visited = false;
 		std::vector<Node*> neighbors;
@@ -30,7 +30,7 @@ public:
 
 	private:
 		int index_{};
-		Node* find_neighbor(std::vector<int> node_indices);
+		Node* find_neighbor(std::vector<int> node_indices) const;
 		RouteModel* parent_model_ = nullptr;
 	};
 

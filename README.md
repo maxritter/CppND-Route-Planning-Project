@@ -17,6 +17,8 @@ The distance between the two points is printed out in the console in meters afte
 ## Compiling and Running
 
 ### Compiling
+Check out [my detailed setup guide](https://knowledge.udacity.com/questions/42416), which also has a setup for Linux dependencies under the "Test" rubric. 
+
 You need to install io2d and its dependencies first. Under Windows, you can use [vcpkg](https://github.com/microsoft/vcpkg) to do that easily:
 
 ```
@@ -28,22 +30,17 @@ To compile the project, first, create a `build` directory and change to that dir
 ```
 mkdir build && cd build
 ```
-From within the `build` directory, then run `cmake` and `make` as follows:
+From within the `build` directory, then run `cmake` and `make` as follows and change the path to your vcpkg directory:
 ```
-cmake .. 
+cmake -DCMAKE_TOOLCHAIN_FILE=vcpkg_root/scripts/buildsystems/vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x64 ..
 make
 ```
-If you used vcpkg before, you need to add the path to the vcpkg.cmake file as well:
-
-```
-cmake -DCMAKE_TOOLCHAIN_FILE=vcpkg_root/scripts/buildsystems/vcpkg.cmake ..
-```
-
+Now the CppND-Route-Planning-Project executable should have been created in the /bin folder.
 
 
 ### Running
 
 The executables will be placed in the `bin` directory. From within `build`, you can run the project as follows:
 ```
-../bin/<name-of-parent-directory> -f ../map.osm
+../bin/CppND-Route-Planning-Project -f ../map.osm
 ```

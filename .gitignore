@@ -4,5 +4,6 @@
 draw.cpp
 test.cpp
 build/
+build_vs/
 bin/
 lib/

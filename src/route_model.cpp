@@ -22,7 +22,7 @@ parent_model_(search_model), index_(idx)
 
 }
 
-RouteModel::Node* RouteModel::Node::find_neighbor(std::vector<int> node_indices)
+RouteModel::Node* RouteModel::Node::find_neighbor(std::vector<int> node_indices) const
 {
 	Node* closest_node = nullptr;
 

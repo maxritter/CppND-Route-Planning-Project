@@ -29,7 +29,7 @@ void RoutePlanner::a_star_search()
 		/* Check if we have reached our goal already */
 		if(current_node->distance(*end_node_) == 0)
 		{
-			m_model_.path = construct_final_path(current_node);
+			m_model_.path = construct_final_path(end_node_);
 			return;
 		}
 
